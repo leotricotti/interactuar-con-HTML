@@ -1,0 +1,542 @@
+/**
+ * 1. Correct the line height in all browsers.
+ * 2. Prevent adjustments of font size after orientation changes in iOS.
+ */
+
+html {
+  line-height: 1.15;
+  /* 1 */
+  -webkit-text-size-adjust: 100%;
+  /* 2 */
+}
+
+/**
+ * Remove the border on images inside links in IE 10.
+ */
+
+img {
+  border-style: none;
+}
+
+/* Forms
+   ========================================================================== */
+
+/**
+ * 1. Change the font styles in all browsers.
+ * 2. Remove the margin in Firefox and Safari.
+ */
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit;
+  /* 1 */
+  font-size: 100%;
+  /* 1 */
+  line-height: 1.15;
+  /* 1 */
+  margin: 0;
+  /* 2 */
+}
+
+/**
+ * Show the overflow in IE.
+ * 1. Show the overflow in Edge.
+ */
+
+button,
+input {
+  /* 1 */
+  overflow: visible;
+}
+
+/**
+ * Remove the inheritance of text transform in Edge, Firefox, and IE.
+ * 1. Remove the inheritance of text transform in Firefox.
+ */
+
+button,
+select {
+  /* 1 */
+  text-transform: none;
+}
+
+/**
+ * Correct the inability to style clickable types in iOS and Safari.
+ */
+
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
+  -webkit-appearance: button;
+}
+
+/**
+ * Remove the inner border and padding in Firefox.
+ */
+
+button::-moz-focus-inner,
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+
+/**
+ * Restore the focus styles unset by the previous rule.
+ */
+
+button:-moz-focusring,
+[type="button"]:-moz-focusring,
+[type="reset"]:-moz-focusring,
+[type="submit"]:-moz-focusring {
+  outline: 1px dotted ButtonText;
+}
+
+/**
+ * Correct the padding in Firefox.
+ */
+
+fieldset {
+  padding: 0.35em 0.75em 0.625em;
+}
+
+/**
+ * 1. Correct the text wrapping in Edge and IE.
+ * 2. Correct the color inheritance from `fieldset` elements in IE.
+ * 3. Remove the padding so developers are not caught out when they zero out
+ *    `fieldset` elements in all browsers.
+ */
+
+legend {
+  box-sizing: border-box;
+  /* 1 */
+  color: inherit;
+  /* 2 */
+  display: table;
+  /* 1 */
+  max-width: 100%;
+  /* 1 */
+  padding: 0;
+  /* 3 */
+  white-space: normal;
+  /* 1 */
+}
+
+/**
+ * Add the correct vertical alignment in Chrome, Firefox, and Opera.
+ */
+
+progress {
+  vertical-align: baseline;
+}
+
+/**
+ * Remove the default vertical scrollbar in IE 10+.
+ */
+
+textarea {
+  overflow: auto;
+}
+
+/**
+ * 1. Add the correct box sizing in IE 10.
+ * 2. Remove the padding in IE 10.
+ */
+
+[type="checkbox"],
+[type="radio"] {
+  box-sizing: border-box;
+  /* 1 */
+  padding: 0;
+  /* 2 */
+}
+
+/**
+ * Correct the cursor style of increment and decrement buttons in Chrome.
+ */
+
+[type="number"]::-webkit-inner-spin-button,
+[type="number"]::-webkit-outer-spin-button {
+  height: auto;
+}
+
+/**
+ * 1. Correct the odd appearance in Chrome and Safari.
+ * 2. Correct the outline style in Safari.
+ */
+
+[type="search"] {
+  -webkit-appearance: textfield;
+  /* 1 */
+  outline-offset: -2px;
+  /* 2 */
+}
+
+/**
+ * Remove the inner padding in Chrome and Safari on macOS.
+ */
+
+[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/**
+ * 1. Correct the inability to style clickable types in iOS and Safari.
+ * 2. Change font properties to `inherit` in Safari.
+ */
+
+::-webkit-file-upload-button {
+  -webkit-appearance: button;
+  /* 1 */
+  font: inherit;
+  /* 2 */
+}
+
+/* Interactive
+   ========================================================================== */
+
+/*
+ * Add the correct display in Edge, IE 10+, and Firefox.
+ */
+
+details {
+  display: block;
+}
+
+/*
+ * Add the correct display in all browsers.
+ */
+
+summary {
+  display: list-item;
+}
+
+/* Misc
+   ========================================================================== */
+
+/**
+ * Add the correct display in IE 10+.
+ */
+
+template {
+  display: none;
+}
+
+/**
+ * Add the correct display in IE 10.
+ */
+
+[hidden] {
+  display: none;
+}
+
+/* Height */
+
+html {
+  height: 100%;
+}
+
+body {
+  max-height: 100%;
+}
+
+/* Reset */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  list-style: none;
+}
+
+li {
+  text-decoration: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* Font */
+
+@font-face {
+  font-family: heading;
+  src: url(../font/WEHM.TTF);
+}
+
+/* Body */
+
+body {
+  background-color: #fff;
+  min-height: 100%;
+}
+
+/* Grid */
+
+.grid-container {
+  display: grid;
+  grid-template: "header" 6rem "heading""main""footer""bottom" / 1fr;
+}
+
+/* Header */
+
+.header-container {
+  grid-area: header;
+  position: fixed;
+  width: 100%;
+  height: 6rem;
+  background-color: #004987;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  padding: 0 1rem;
+  z-index: 1;
+}
+
+.bank-logo {
+  width: 200px;
+}
+
+/* Heading */
+
+.heading-container {
+  grid-area: heading;
+  color: #fff;
+  background-color: #002856;
+  margin: 2rem 1rem 0 1rem;
+  text-align: center;
+}
+
+.main-heading {
+  font-family: heading;
+  font-size: 2rem;
+  padding: 1rem 2rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  line-height: 1.5;
+}
+
+/* Main */
+
+.cajero-container {
+  grid-area: main;
+  color: #fff;
+  background-color: #304d75;
+  padding-bottom: 2rem;
+  margin: 0 1rem 2rem 1rem;
+}
+
+.text {
+  font-family: heading;
+  font-size: 1.25rem;
+  font-weight: bold;
+  text-align: center;
+  padding: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  line-height: 1.5;
+}
+
+.btn,
+.btn-izquierda {
+  background-color: #e6e6e6;
+  height: 50px;
+  width: 44px;
+  position: relative;
+  z-index: 0;
+  margin: 1.25rem 2rem 1.25rem 2rem;
+  transition: all .5 ease-in;
+}
+
+div.btn-izquierda::before {
+  right: -25px;
+  border-width: 25px 25px 25px 0;
+  transform: rotateY(180deg)
+}
+
+div.btn::before {
+  left: -25px;
+  border-width: 25px 25px 25px 0;
+}
+
+div.btn::after,
+div.btn::before,
+div.btn-izquierda::after,
+div.btn-izquierda::before {
+  border-color: transparent #e6e6e6;
+}
+
+div::before,
+div::after {
+  content: '';
+  position: absolute;
+  height: 0;
+  width: 0;
+  border-style: solid;
+  border-width: 0;
+}
+
+.teclado-izquierda,
+.teclado-derecha {
+  font-family: heading;
+  font-size: 1.1rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.teclas-izquierda {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+}
+
+.teclas-derecha {
+  display: flex;
+  justify-content: right;
+  align-items: center;
+}
+
+.teclado-izquierda p {
+  margin: 0 1rem;
+  letter-spacing: 2px;
+}
+
+.teclado-derecha p {
+  margin: 0 1rem;
+  letter-spacing: 2px;
+}
+
+.btn:hover,
+.btn-izquierda:hover {
+  transform: translateY(-5px);
+}
+
+/* Footer */
+
+.footer-container {
+  grid-area: footer;
+  width: 100%;
+  height: 200px;
+  background-color: #191919;
+  background-image: url(../img/footer/map-small.png);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-container img {
+  width: 80%;
+}
+
+/* bottom */
+
+.bottom {
+  grid-area: bottom;
+  width: 100%;
+  height: 6rem;
+  color: #fff;
+  font-family: heading;
+  letter-spacing: 2px;
+  background-color: #000;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+}
+
+/************************************ Consultas.html ****************************************************/
+
+.separador {
+  width: 100%;
+  height: 40vh;
+  background-color: transparent;
+}
+
+/* Media Query */
+
+@media (min-width: 36rem) {
+
+  br {
+    display: none;
+  }
+
+  .header-container {
+    height: 6rem;
+    padding: 0 5rem;
+  }
+
+  .heading-container {
+    margin: 1.5rem 3rem 0 3rem;
+  }
+
+  .cajero-container {
+    margin: 0 3rem 2rem 3rem;
+  }
+
+  .footer-container img {
+    max-width: 30rem;
+  }
+}
+
+@media (min-width: 48rem) {
+
+  br {
+    display: none;
+  }
+
+  .header-container {
+    height: 6rem;
+    padding: 0 5rem;
+  }
+
+  .heading-container {
+    margin: 2.5rem 5rem 0 5rem;
+  }
+
+  .cajero-container {
+    margin: 0 5rem 3.5rem 5rem;
+  }
+  
+  .teclado-container {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .teclado-izquierda {
+    padding-right: 5rem;
+  
+  }
+}
+
+@media (min-width: 62rem) {
+
+  .teclado-container {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 5rem;
+  }
+}
+
+@media (min-width: 75rem) {
+  .cajero-container {
+    padding-bottom: 15rem;
+  }
+
+  .cajero-container,
+  .heading-container {
+    width: 90%;
+    max-width: 1100px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}

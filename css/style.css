@@ -335,6 +335,8 @@ body {
 }
 
 .text {
+  width: 100%;
+  margin: 0 auto; 
   font-family: heading;
   font-size: 1.25rem;
   font-weight: bold;
@@ -415,9 +417,22 @@ div::after {
   letter-spacing: 2px;
 }
 
+.eleccion {
+  padding: 3rem 1rem;
+}
+
 .btn:hover,
 .btn-izquierda:hover {
   transform: translateY(-5px);
+}
+
+.btn-disable {
+  opacity: .65;
+  pointer-events: none;
+}
+
+.link-disable {
+  pointer-events: none;
 }
 
 /* Footer */
@@ -452,14 +467,6 @@ div::after {
   justify-content: center;
   align-items: center;
   text-transform: uppercase;
-}
-
-/************************************ Consultas.html ****************************************************/
-
-.separador {
-  width: 100%;
-  height: 40vh;
-  background-color: transparent;
 }
 
 /* Media Query */
@@ -513,7 +520,7 @@ div::after {
   }
 
   .teclado-izquierda {
-    padding-right: 5rem;
+    padding-right: 2rem;
   
   }
 }
@@ -525,6 +532,7 @@ div::after {
     justify-content: space-between;
     margin: 0 5rem;
   }
+
 }
 
 @media (min-width: 75rem) {

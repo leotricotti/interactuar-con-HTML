@@ -81,22 +81,18 @@ const extracc3 = new Operacion(
   "$ 115.343.00"
 );
 
+//Cuentas 
+const cuentas = [
+{tipo: "Caja de Ahorro", moneda: "$", cuenta: "5069-5689756/4", identificador: "Cuenta", saldo: "$ 100.000,00"},
+{tipo: "Cta Corriente", moneda: "$", cuenta: "5069-5689652/4", identificador: "Cuenta", saldo: "$ 200.000,00"},
+{tipo: "Caja de Ahorro", moneda: "USD", cuenta: "5069-5685686/4", identificador: "Cuenta", saldo: "USD 5.000,00"},
+]
+
 //Operaciones
 const operaciones = [];
 operaciones.push(deposito1, deposito2, deposito3);
 operaciones.push(pago1, pago2, pago3);
 operaciones.push(extracc1, extracc2, extracc3);
-
-//Saldo inicial
-let saldo = 100000;
-
-//Pasar saldo a dinero
-function convertir(dinero) {
-  return (dinero = new Intl.NumberFormat("es-AR", {
-    style: "currency",
-    currency: "ARS",
-  }).format(saldo));
-}
 
 //Odenar por fecha 
 let ordenados = operaciones.sort((a, b) => {
@@ -108,7 +104,49 @@ let ordenados = operaciones.sort((a, b) => {
   }
 });
 
-//Devolucion de datos
+//Consulta de saldo
+
+function mostrarSaldo(){
+  let text = document.querySelector(".text");
+  text.innerText = "Cuentas";
+
+  let table = document.createElement("table");
+  table.className= "table table-hover";
+  
+  let tableHead = document.createElement("thead");
+  tableHead.innerHTML = `
+    <thead>
+      <tr>
+        <th scope="col">Tipo de Cuenta</th>
+        <th scope="col">Moneda</th>
+        <th scope="col">Cuenta</th>
+        <th scope="col">Identificación</th>
+        <th scope="col">Saldo</th>
+      </tr>
+    </thead>
+  `
+  let tableBody = document.createElement("tbody");
+  tableBody.className = "table-group-divider";
+  
+  for(const cuenta of cuentas){
+      tableBody.innerHTML += `
+          <tr>
+              <td>${cuenta.tipo}</td>
+              <td>${cuenta.moneda}</td>
+              <td>${cuenta.cuenta}</td>
+              <td>${cuenta.identificador}</td>
+              <td>${cuenta.saldo}</td>
+          </tr>
+      `;
+  }
+
+  table.append(tableHead);
+  table.append(tableBody);
+  let tableContainer = document.querySelector(".table-container");
+  tableContainer.append(table);
+};
+
+//Ultimos Movimientos
 function mostarMovimientos(){
   let text = document.querySelector(".text");
   text.innerText = "Ultimos Movimientos";
@@ -179,7 +217,7 @@ function consultar(op) {
     "Seleccione la operación deseada: \n1) Consulta de saldo \n2) Ultimos movimientos \n3) Menu Principal"
   );
   if (op == "1") {
-    return alert("Su saldo es: " + convertir(saldo));
+    mostrarSaldo();
   } else if (op == "2") {
     mostarMovimientos();
   } else if (op == "3") {

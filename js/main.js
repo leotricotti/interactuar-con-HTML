@@ -14,21 +14,21 @@ class Operacion {
 const deposito1 = new Operacion(
   "08/07/2022",
   "15:55",
-  "Depósito",
+  "Deposito",
   "$ 15.000.00",
   "$ 125.343.00"
 );
 const deposito2 = new Operacion(
   "17/07/2022",
   "12:34",
-  "Depósito",
+  "Deposito",
   "$ 30.000.00",
   "$ 155.343.00"
 );
 const deposito3 = new Operacion(
   "10/07/2022",
   "12:18",
-  "Depósito",
+  "Deposito",
   "$ 20.000.00",
   "$ 115.343.00"
 );
@@ -62,21 +62,21 @@ const pago3 = new Operacion(
 const extracc1 = new Operacion(
   "14/07/2022",
   "15:55",
-  "Extracción",
+  "Extraccion",
   "$ 15.000.00",
   "$ 125.343.00"
 );
 const extracc2 = new Operacion(
   "03/07/2022",
   "12:34",
-  "Extracción",
+  "Extraccion",
   "$ 30.000.00",
   "$ 95.343.00"
 );
 const extracc3 = new Operacion(
   "20/07/2022",
   "12:18",
-  "Extracción",
+  "Extraccion",
   "$ 20.000.00",
   "$ 115.343.00"
 );
@@ -120,7 +120,7 @@ function mostrarSaldo(){
         <th scope="col">Tipo de Cuenta</th>
         <th scope="col">Moneda</th>
         <th scope="col">Cuenta</th>
-        <th scope="col">Identificación</th>
+        <th scope="col">Identificacion</th>
         <th scope="col">Saldo</th>
       </tr>
     </thead>
@@ -160,7 +160,7 @@ function mostarMovimientos(){
       <tr>
         <th scope="col">Fecha</th>
         <th scope="col">Hora</th>
-        <th scope="col">Operación</th>
+        <th scope="col">Operacion</th>
         <th scope="col">Monto</th>
         <th scope="col">Saldo</th>
       </tr>
@@ -222,7 +222,7 @@ function consultar(op) {
     mostarMovimientos();
   } else if (op == "3") {
     return (seleccion = prompt(
-      "Seleccione la operación deseada: \n1) Consultas \n2) Depósitos \n3) Extracciones \n4) Pagos \n5) Salir"
+      "Seleccione la operación deseada: \n1) Consultas \n2) Depositos \n3) Extracciones \n4) Pagos \n5) Salir"
     ));
   } else {
     alert("Elija una opcion valida.");

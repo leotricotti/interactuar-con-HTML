@@ -347,6 +347,23 @@ body {
   line-height: 1.5;
 }
 
+.table {
+  font-family: heading;
+  text-transform: uppercase;
+  color: #fff;
+  opacity: .8;
+  margin-bottom: 5rem;
+}
+
+.table th, td {
+  text-align: center;
+}
+
+.table-hover tbody tr:hover td, .table-hover tbody tr:hover th {
+  background-color: #fff;
+  opacity: .8;
+}
+
 .btn-derecha,
 .btn-izquierda {
   background-color: #e6e6e6;

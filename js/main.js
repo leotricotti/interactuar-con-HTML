@@ -98,10 +98,63 @@ function convertir(dinero) {
   }).format(saldo));
 }
 
+//Odenar por fecha 
+let ordenados = operaciones.sort((a, b) => {
+  if (a.fecha > b.fecha) {
+    return 1;
+  }
+  if (a.fecha < b.fecha) {
+    return -1;
+  }
+});
+
+//Devolucion de datos
+function mostarMovimientos(){
+  let text = document.querySelector(".text");
+  text.innerText = "Ultimos Movimientos";
+
+  let table = document.createElement("table");
+  table.className= "table table-hover";
+  
+  let tableHead = document.createElement("thead");
+  tableHead.innerHTML = `
+    <thead>
+      <tr>
+        <th scope="col">Fecha</th>
+        <th scope="col">Hora</th>
+        <th scope="col">Operación</th>
+        <th scope="col">Monto</th>
+        <th scope="col">Saldo</th>
+      </tr>
+    </thead>
+  `
+  let tableBody = document.createElement("tbody");
+  tableBody.className = "table-group-divider";
+  
+  for(const operacion of ordenados){
+      tableBody.innerHTML += `
+          <tr>
+              <td>${operacion.fecha}</td>
+              <td>${operacion.hora}</td>
+              <td>${operacion.operacion}</td>
+              <td>${operacion.monto}</td>
+              <td>${operacion.saldo}</td>
+          </tr>
+      `;
+  }
+
+  table.append(tableHead);
+  table.append(tableBody);
+  let tableContainer = document.querySelector(".table-container");
+  tableContainer.append(table);
+};
+
+
 //Menu inicio
 let seleccion = prompt(
   "Seleccione la operación deseada: \n1) Consultas \n2) Salir"
 );
+
 
 //Funcion nueva operacion
 function continuar(continuo) {
@@ -121,22 +174,14 @@ function continuar(continuo) {
 }
 
 //Función para consultas
-function consultar(op, fn) {
+function consultar(op) {
   op = prompt(
     "Seleccione la operación deseada: \n1) Consulta de saldo \n2) Ultimos movimientos \n3) Menu Principal"
   );
   if (op == "1") {
     return alert("Su saldo es: " + convertir(saldo));
   } else if (op == "2") {
-    operaciones.sort((a, b) => {
-      if (a.fecha > b.fecha) {
-        return 1;
-      }
-      if (a.fecha < b.fecha) {
-        return -1;
-      }
-    });
-    return console.table(operaciones);
+    mostarMovimientos();
   } else if (op == "3") {
     return (seleccion = prompt(
       "Seleccione la operación deseada: \n1) Consultas \n2) Depósitos \n3) Extracciones \n4) Pagos \n5) Salir"

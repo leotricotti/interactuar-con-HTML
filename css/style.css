@@ -347,7 +347,7 @@ body {
   line-height: 1.5;
 }
 
-.btn,
+.btn-derecha,
 .btn-izquierda {
   background-color: #e6e6e6;
   height: 50px;
@@ -364,13 +364,13 @@ div.btn-izquierda::before {
   transform: rotateY(180deg)
 }
 
-div.btn::before {
+div.btn-derecha::before {
   left: -25px;
   border-width: 25px 25px 25px 0;
 }
 
-div.btn::after,
-div.btn::before,
+div.btn-derecha::after,
+div.btn-derecha::before,
 div.btn-izquierda::after,
 div.btn-izquierda::before {
   border-color: transparent #e6e6e6;
